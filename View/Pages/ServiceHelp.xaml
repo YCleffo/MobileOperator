@@ -1,0 +1,59 @@
+﻿<Page x:Class="MobileOperator.View.Pages.ServiceHelp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MobileOperator.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Поддержка">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+            <TextBlock>Поиск</TextBlock>
+            <TextBox Width="200" Height="20" x:Name="FilterTextBox" TextChanged="FilterTextBoxTextChanged" Margin="10,0"></TextBox>
+            <TextBlock>Сортировка по стоимости</TextBlock>
+            <ComboBox Margin="10,0" x:Name="SortCombobox" SelectionChanged="SortComboboxSelectionChanged">
+                <ComboBoxItem>
+                    <TextBlock>По возрастанию</TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem>По убыванию</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="0,20">
+            <ListView x:Name="ServiceListView" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="\Assets\Images\1.jpg" Width="300" Grid.ColumnSpan="3"/>
+                            <StackPanel Grid.Row="1">
+                                <TextBlock Text="{Binding ServiceName}"></TextBlock>
+                                <TextBlock Text="{Binding SalaryService}"></TextBlock>
+                            </StackPanel>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ConnctPrice}"></TextBlock>
+                            <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource BehaindButton}">Подключить</Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel HorizontalAlignment="Center"></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </ScrollViewer>
+    </Grid>
+</Page>

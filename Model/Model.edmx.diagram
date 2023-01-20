@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6d04159621c740b1972a8c115ff53505" Name="Diagram1">
+        <EntityTypeShape EntityType="user21Model.Client" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="user21Model.Rate" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="user21Model.Services" Width="1.5" PointX="3" PointY="5.75" />
+        <EntityTypeShape EntityType="user21Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="user21Model.UsingService" Width="1.5" PointX="5.25" PointY="1.625" />
+        <AssociationConnector Association="user21Model.FK_Client_Rate" />
+        <AssociationConnector Association="user21Model.FK_UsingService_Client" />
+        <AssociationConnector Association="user21Model.FK_UsingService_Services" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
